@@ -1,7 +1,7 @@
 IsolatePage JQuery Plugin
 ================================
 
-A plugin for managing what javascript gets loaded per page, so your code can remain nice and isolated not being loaded where it's not wanted. Get rid of nasty collisions and wasted time spent loading javascript you dont need!
+A plugin for managing what javascript gets loaded per page, so your code can remain nice and isolated not being loaded where it's not wanted. Get rid of nasty collisions and wasted time spent loading javascript you dont need, and still be able to have all your javascript cached and loaded in one request!
 
 Installation
 -------------------------
@@ -9,13 +9,13 @@ Installation
 Just include the source file. All examples are in coffeescript, but you can install the plugin using either the coffeescript or the javascript file depending on your preference. Obviously this plugin depends on JQuery.
 
 ```html
-<script type="text/javascript" src="yourfiles/jquery.isolatepage.js"></script>
+<script type="text/javascript" src="yourfiles/jquery.isolatepage.min.js"></script>
 ```
 
 Usage
 -------------------------
 
-1. you can set the javascript for a page:
+1. You can set the javascript for a page:
 
   ```coffeescript
   $.isolatePage('setPage', 'testpage', ->
@@ -27,6 +27,20 @@ Usage
 
   ```coffeescript
   $.isolatePage('loadPage', 'testpage')
+  ```
+
+3. You can set the javascript for multiple pages:
+
+  ```coffeescript
+  $.isolatePage('setPage', ['testpage', 'onemore'], ->
+    #PAGE SPECIFIC CODE GOES HERE
+  )
+  ```
+
+4. You load the javascript for multiple pages:
+
+  ```coffeescript
+  $.isolatePage('loadPage', ['testpage','onemore','idontexistyet'])
   ```
 
 Examples (coffeescript)
@@ -57,6 +71,8 @@ $.isolatePage('setPage', ["testpageone", "testpagetwo"], ->
 )
 ```
 
+Check out the specs for more coffeescript examples
+
 Examples (javascript)
 -------------------------------
 Here are similar examples in javascript
@@ -82,7 +98,7 @@ $(document).ready(function() {
 });
 ```
 
-In the above example, thing with the "dontseeme" class on pages with the body id set to "page_id" are immediatly hidden, while on pages with the id "testpageone" or "testpagetwo" they fade away.
+In the above example, on pages with the body id set to "page_id", the elements with the "dontseeme" class  are immediatly hidden. On pages with the id "testpageone" or "testpagetwo" they fade away.
 
 Contribute
 -------------------------------

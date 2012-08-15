@@ -35,3 +35,29 @@ describe "isolatePage", ->
       result = 1
       $.isolatePage('loadPage', "notset")
       expect(result).toEqual 1
+
+    it "pages can be set mulitple times", ->
+      result = 1
+      second = 5
+      $.isolatePage('setPage', "testpage", ->
+        result = 2
+      )
+      $.isolatePage('setPage', "testpage", ->
+        second = 9
+      )
+      $.isolatePage('loadPage', "testpage")
+      expect(result).toEqual 2
+      expect(second).toEqual 9
+
+    it "can load multiple pages", ->
+      result = 1
+      second = 5
+      $.isolatePage('setPage', "testpage", ->
+        result = 3
+      )
+      $.isolatePage('setPage', "testpagetwo", ->
+        second = 8
+      )
+      $.isolatePage('loadPage', ["testpage","testpagetwo"])
+      expect(result).toEqual 3
+      expect(second).toEqual 8

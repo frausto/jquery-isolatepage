@@ -8,11 +8,13 @@ do ($ = jQuery) ->
         page_scripts[name].push(page_function)
       this
 
-    loadPage: (page_name) ->
+    loadPage: (page_names) ->
       body = $("body")
-      functions = $.makeArray(page_scripts[page_name])
-      for page_function in functions
-        page_function.apply(body)
+      page_names = $.makeArray(page_names)
+      for page_name in page_names
+        functions = $.makeArray(page_scripts[page_name])
+        for page_function in functions
+          page_function.apply(body)
       this
   }
 
