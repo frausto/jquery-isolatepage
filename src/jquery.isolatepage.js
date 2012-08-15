@@ -16,15 +16,14 @@
         return this;
       },
       loadPage: function(page_names) {
-        var body, functions, page_function, page_name, _i, _j, _len, _len1;
-        body = $("body");
+        var functions, page_function, page_name, _i, _j, _len, _len1;
         page_names = $.makeArray(page_names);
         for (_i = 0, _len = page_names.length; _i < _len; _i++) {
           page_name = page_names[_i];
           functions = $.makeArray(page_scripts[page_name]);
           for (_j = 0, _len1 = functions.length; _j < _len1; _j++) {
             page_function = functions[_j];
-            page_function.apply(body);
+            page_function.apply();
           }
         }
         return this;
