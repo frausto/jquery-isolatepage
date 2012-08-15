@@ -30,3 +30,8 @@ describe "isolatePage", ->
       result = 1
       $.isolatePage('loadPage', "testpage")
       expect(result).toEqual 2
+
+    it "works when trying to load a page that has not been set", ->
+      result = 1
+      $.isolatePage('loadPage', "notset")
+      expect(result).toEqual 1
