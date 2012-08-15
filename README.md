@@ -29,7 +29,7 @@ Usage
   $.isolatePage('loadPage', 'testpage')
   ```
 
-Examples
+Examples (coffeescript)
 -------------------------------
 
 An example of how it can be used in coffeescript. You can take the id of the body of a page set the code you want to run for that page and load the javascript for it on every page load:
@@ -56,6 +56,33 @@ $.isolatePage('setPage', ["testpageone", "testpagetwo"], ->
   $(".dontseeme").hide()
 )
 ```
+
+Examples (javascript)
+-------------------------------
+Here are similar examples in javascript
+
+```javascript
+$.isolatePage('setPage', "page_id", function() {
+  $(".dontseeme").hide();
+});
+```
+
+```javascript
+$.isolatePage('setPage', ["testpageone", "testpagetwo"], function() {
+  $(".dontseeme").fadeOut();
+});
+```
+
+```javascript
+$(document).ready(function() {
+  var body, page_name;
+  body = $("body");
+  page_name = $.trim(body.prop("id"));
+  $.isolatePage('loadPage', page_name);
+});
+```
+
+In the above example, thing with the "dontseeme" class on pages with the body id set to "page_id" are immediatly hidden, while on pages with the id "testpageone" or "testpagetwo" they fade away.
 
 Contribute
 -------------------------------
