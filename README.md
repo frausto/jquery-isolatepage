@@ -8,13 +8,17 @@ Usage
 
 1. you can set the javascript for a page:
 
-        $.isolatePage('setPage', 'testpage', ->
-          #PAGE SPECIFIC CODE GOES HERE
-        )
+  ```coffeescript
+  $.isolatePage('setPage', 'testpage', ->
+    #PAGE SPECIFIC CODE GOES HERE
+  )
+  ```
 
 2. You load the javascript for a page you have setup using:
 
-        $.isolatePage('loadPage', 'testpage')
+  ```coffeescript
+  $.isolatePage('loadPage', 'testpage')
+  ```
 
 
 
@@ -38,4 +42,4 @@ $(document).ready ->
   $.isolatePage('loadPage', page_name)
 ```
 
-In this example any page body with the id "page_id", will hide everything of the class "dontseeme". This wont happen for page's with different body ids.
+In this example any page body with the id "page_id", will hide everything of the class "dontseeme". This wont happen for pages with different body ids.
