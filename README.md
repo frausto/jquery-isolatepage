@@ -1,7 +1,7 @@
 IsolatePage JQuery Plugin
 ================================
 
-A plugin for managing what javascript gets loaded per page, so your code can remain nice and isolated not being loaded where it's not wanted.
+A plugin for managing what javascript gets loaded per page, so your code can remain nice and isolated not being loaded where it's not wanted. Get rid of nasty collisions and wasted time spent loading javascript you dont need!
 
 Installation
 -------------------------
