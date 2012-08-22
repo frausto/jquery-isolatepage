@@ -90,6 +90,12 @@ $.isolatePage('setPage', ["testpageone", "testpagetwo"], function() {
 ```
 
 ```javascript
+$.isolatePage('setPage', "testpagetwo", function() {
+  $(".hidemore").hide();
+});
+```
+
+```javascript
 $(document).ready(function() {
   var body, page_name;
   body = $("body");
@@ -98,7 +104,7 @@ $(document).ready(function() {
 });
 ```
 
-In the above example, on pages with the body id set to "page_id", the elements with the "dontseeme" class  are immediatly hidden. On pages with the id "testpageone" or "testpagetwo" they fade away.
+In the above example, on pages with the body id set to "page_id", the elements with the "dontseeme" class are immediatly hidden. On pages with the id "testpageone" or "testpagetwo" they fade away. Pages with the id "testpagetwo" also hide things with class "hidemore", you can set the javascript for any given "page" multiple times if you want.
 
 Contribute
 -------------------------------
